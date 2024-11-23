@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="icon" href="playlist-icon.webp">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filimua | Musics</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+
+        body{
+            font-family: helvetica;
+            background-image: url(TravisScott_NETFLIX_Web_Showpage_1920x1080.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            background-position-y: -150px;
+        }
+
+        header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 4%;
+        }
+
+        header img{
+            width: 150px;
+            height: 130px;
+        }
+
+        nav ul li{
+            display: inline-block;
+            padding: 0 30px;
+            list-style: none;
+        }
+
+        nav ul li a{
+            text-decoration: none;
+            color: #7c7373;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover{
+            transition: .8s;
+            color: white;
+        }
+
+        .register{
+            display: flex;
+            gap: 40px;
+            color: #7c7373;
+            cursor: pointer;
+        }
+
+        .register p:hover{
+            transition: .8s;
+            color: white;
+        }
+
+        h2{
+            text-align: center;
+            font-size: 70px;
+            padding: 120px;
+            text-transform: uppercase;
+            font-family: impact;
+            letter-spacing: 18px;
+            text-shadow: 2px 2px white;
+            animation: fjm 2s alternate infinite;
+        }
+
+        @keyframes fjm{
+            from{
+
+                opacity: 0;
+                transform: scale(0.8);
+            }to{
+                opacity: 0.6;
+                transform: scale(1);
+            }
+        }
+
+        .musics h3{
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 50px;
+            font-weight: bold;
+            font-family: impact;
+            letter-spacing: 4px;
+        }
+
+        .slides-content{
+            width: 100%;
+            height: 700px;
+            overflow: hidden;
+            margin: 0 auto;
+            margin-top: -22px;
+        }
+
+        .slides{
+            display: flex;
+            width: 500%;
+            height: 100%;
+        }
+
+        .slide img{
+            width: 100%;
+            height: 100%;
+        }
+        .slide{
+            width: 20%;
+            transition: .8s ease;
+        }
+
+        input{
+            display: none;
+        }
+
+        #slide1:checked ~ .s1{
+            margin-left: 0;
+        }
+        #slide2:checked ~ .s1{
+            margin-left: -20%;
+        }
+        #slide3:checked ~ .s1{
+            margin-left: -40%;
+        }
+        #slide4:checked ~ .s1{
+            margin-left: -60%;
+        }
+        #slide5:checked ~ .s1{
+            margin-left: -80%;
+        }
+       
+        h4{
+            font-size: 50px;
+            letter-spacing: 12px;
+            text-transform: uppercase;
+            font-family: impact;
+            text-align: center;
+            padding: 20px;
+            color: white;
+        }
+
+        .content{
+            background-color: black;
+        }
+
+        .clica{
+            position: fixed;
+            top: 60%;
+            right: 4%;
+            background-color: black;
+            width: 40px;
+            height: 40px;
+            border-radius: 40px;
+            text-align: center;
+            cursor: pointer;
+            padding: 40px;
+            animation: butto 2s alternate infinite;
+        }
+
+        .clica p{
+            margin-left: -20px;
+            margin-top: -15px;
+            font-family: impact;
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        @keyframes butto{
+            from{
+                background-color: black;
+                color: white;
+                outline: 0;
+            }to{
+                background-color: white;
+                color: black;
+                outline: 6px solid black;
+            }
+        }
+
+        .travis{
+            background-image: url(scott.webp);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 85vh;
+            width: 600px;
+            text-align: center;
+            border-radius: 30px;
+        }
+
+        .juice{
+            background-image: url(juice.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 85vh;
+            width: 600px;
+            text-align: center;
+            border-radius: 30px; 
+        }
+        
+        .juice p{
+            color: blue;
+            font-size: 28px;
+            font-weight: bold;
+            font-family: impact;
+            border-bottom: 1px solid blue;
+            letter-spacing: 6px;
+        }
+
+        .juice span{
+            color: white;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-transform: uppercase;
+        }
+        .travis p{
+            color: blue;
+            font-size: 28px;
+            font-weight: bold;
+            font-family: impact;
+            border-bottom: 1px solid blue;
+            letter-spacing: 6px;
+        }
+
+        .travis span{
+            color: white;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-transform: uppercase;
+        }
+
+        .plays{
+            display: flex;
+            justify-content: space-around;
+        }
+
+       
+
+        .xxx{
+            background-image: url(xxxtentacion-bw-press-photo-2018-billboard-1548.webp);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 85vh;
+            width: 600px;
+            text-align: center;
+            border-radius: 30px;
+        }
+
+        .xxx p{
+            color: red;
+            border-bottom: 1px solid red;
+            font-size: 28px;
+            font-weight: bold;
+            font-family: impact;
+            letter-spacing: 6px;
+        }
+       
+        .xxx span{
+            color: white;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-transform: uppercase;
+        }
+
+        .fundo{
+            background: rgba(0, 0, 0, 0.6);
+            height: 85vh;
+            width: 600px;
+            padding: 30px;
+        }
+
+        .smoke{
+            background-image: url(pop.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 85vh;
+            width: 600px;
+            text-align: center;
+            border-radius: 30px;
+        }
+
+        .smoke p{
+            color: red;
+            border-bottom: 1px solid red;
+            font-size: 28px;
+            font-weight: bold;
+            font-family: impact;
+            letter-spacing: 6px;
+        }
+
+        .smoke span{
+            color: white;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-transform: uppercase;
+        }
+
+        footer{
+            text-align: center;
+            background-color: black;
+            color: white;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <audio style="display: none;" id="juiceSond" src="juice_wrld_type_beat_x_guitar_pop_trap_beat_love_scars_mp3_41877.mp3" ></audio>
+    <header>
+
+       <div class="logo">
+            <img src="playlist-icon.webp" alt="">
+       </div>
+
+       <div class="links">
+        <nav>
+            <ul>
+                <li><a href="#">Menu Principal</a></li> 
+                <li><a href="#play">Playlist</a></li>
+                <li><a href="#">Explorar</a></li>
+            </ul>
+        </nav>
+       </div>
+
+       <div class="register">
+        <p>Registra-se</p>
+        <p>Entrar</p>
+       </div>
+    </header>
+
+    <main>
+
+        <h2>TRAP SONGS</h2>
+
+    </main>
+
+    <div class="musics">
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+      
+    </div>
+
+    <div class="slides-content">
+
+        <div class="slides">
+
+            <input type="radio" name="slide" id="slide1" checked>
+            <input type="radio" name="slide" id="slide2">
+            <input type="radio" name="slide" id="slide3">
+            <input type="radio" name="slide" id="slide4">
+            <input type="radio" name="slide" id="slide5">
+
+            <div class="slide s1">
+                <img src="fundo.jpg" alt="">
+                <br>
+                <p>XXXTENTACION</p>
+            </div>
+
+            <div class="slide">
+                <img src="scott.webp" alt="">
+                <br>
+                <p>TRAVIS SCOTT</p>
+            </div>
+
+            <div class="slide">
+                <img src="pop.jpg" alt="">
+                <br>
+                <p>POP SMOKE</p>
+            </div>
+
+            <div class="slide">
+                <img src="juice.jpg" alt="">
+                <br>
+                <p>JUICE WORLD</p>
+            </div>
+
+            <div class="slide">
+                <img src="xxxtentacion-bw-press-photo-2018-billboard-1548.webp" alt="">
+            </div>
+        </div>
+
+        <div class="nav">
+            <label for="slide1" class="br" id="slide"></label>
+            <label for="slide2" class="br" id="slide"></label>
+            <label for="slide3" class="br" id="slide"></label>
+            <label for="slide4" class="br" id="slide"></label>
+        </div>
+    </div>
+
+    <div class="clica" onclick="ativar()">
+        <p>clica</p>
+    </div>
+
+    <div id="play" class="content">
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <h4>Playlist</h4>
+
+        <br>
+        <br>
+        <br>
+
+        <div class="plays">
+
+    
+        <div class="travis">
+
+            <div class="fundo">
+
+            
+            <p>TRAVIS SCOTT</p>
+
+            <br>
+
+            <audio src="travis_scott_butterfly_effect_mp3_83294.mp3" controls autoplay></audio>
+            <br>
+            <br>
+            <span>Butterfly Effect</span>
+            <br>
+            <br>
+            <audio src="travis_scott_bad_bunny_the_weeknd_k-pop_official_music_video_mp3_83503.mp3" controls autoplay></audio>
+            <br>
+            <br>
+            <span>K Pop</span>
+            <br>
+            <br>
+            <audio src="travis_scott_highest_in_the_room_mp3_83219.mp3" controls autoplay></audio>
+            <br>
+            <br>
+            <span>Highest In Room</span>
+            <br>
+            <br>
+            <audio src="travis_scott_houstonfornication_audio_mp3_83439.mp3" controls autoplay></audio>
+            <br>
+            <br>
+            <span>HoustonFornication</span>
+            </div>
+        </div>
+
+        <div class="xxx">
+            <div class="fundo">
+
+            
+            <p>XXXTENTACION</p>
+
+            <br>
+
+            <audio src="travis_scott_butterfly_effect_mp3_83294.mp3" controls autoplay></audio>
+            <br>
+            <br>
+            <span>Butterfly Effect</span>
+            <br>
+            <br>
+            <audio src="travis_scott_bad_bunny_the_weeknd_k-pop_official_music_video_mp3_83503.mp3" controls autoplay></audio>
+            <br>
+            <br>
+            <span>K Pop</span>
+            <br>
+            <br>
+            <audio src="travis_scott_highest_in_the_room_mp3_83219.mp3" controls autoplay></audio>
+            <br>
+            <br>
+            <span>Highest In Room</span>
+            <br>
+            <br>
+            <audio src="travis_scott_houstonfornication_audio_mp3_83439.mp3" controls autoplay></audio>
+            <br>
+            <br>
+            <span>HoustonFornication</span>
+        </div>
+    </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <div class="plays">
+
+    
+        <div class="smoke">
+
+            <div class="fundo">
+
+            
+            <p>POP SMOKE</p>
+
+            <br>
+
+            <audio src="jnr_choi_to_the_moon_ft._pop_smoke_juice_wrld_prod_alpha_mp3_84429.mp3" controls autoplay></audio>
+            <br>
+            <br>
+            <span>Moon Remix</span>
+            <br>
+            <br>
+            <audio src="pop_smoke_24_ft._central_cee_travis_scott_more_music_video_mp3_72420 - Cópia.mp3" controls autoplay></audio>
+            <br>
+            <br>
+            <span>24</span>
+            <br>
+            <br>
+            <audio src="pop_smoke_24_ft._central_cee_travis_scott_more_music_video_mp3_72420 - Cópia.mp3" controls autoplay></audio>
+            <br>
+            <br>
+            <span>24</span>
+            <br>
+            <br>
+            <audio src="pop_smoke_ft._fivio_foreign_central_cee_daily_basis_music_video_mp3_84526.mp3" controls autoplay></audio>
+            <br>
+            <br>
+            <span>Daily Basis</span>
+            </div>
+        </div>
+
+        <div class="juice">
+            <div class="fundo">
+
+            
+            <p>JUICE WORLD</p>
+
+            <br>
+
+            <audio src="juice_wrld_conversations_official_music_video_mp3_41608.mp3" controls autoplay></audio>
+            <br>
+            <br>
+            <span>Conversation</span>
+            <br>
+            <br>
+            <audio src="juice_wrld_fast_mp3_41636.mp3" controls autoplay></audio>
+            <br>
+            <br>
+            <span>Fast</span>
+            <br>
+            <br>
+            <audio src="juice_wrld_lucid_dreams_dir._by_colebennett_mp3_41523.mp3" controls autoplay></audio>
+            <br>
+            <br>
+            <span>Lucid Dreams</span>
+            <br>
+            <br>
+            <audio src="juice_wrld_righteous_mp3_41577.mp3" controls autoplay></audio>
+            <br>
+            <br>
+            <span>Righteous</span>
+        </div>
+    </div>
+    </div>
+    
+    </div>
+
+
+    <footer>
+
+        <p>&copy; copyright 2024, Filimua Fjm : all rights reserved.</p>
+
+    </footer>
+
+    <script>
+        let cont = 1
+        
+        setInterval( function(){
+            document.getElementById('slide' + cont).checked = true
+            cont++
+
+            if(cont > 5){
+                cont = 1
+            }
+        }, 3000);
+            
+        
+    
+        function ativar(){
+            juiceSond.play();
+        }
+     
+       
+    </script>
+</body>
+</html>
